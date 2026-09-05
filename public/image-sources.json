@@ -1,0 +1,54 @@
+[
+  {
+    "key": "hero",
+    "url": "https://images.pexels.com/photos/5905276/pexels-photo-5905276.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    "source": "https://www.pexels.com/photo/black-stylish-man-standing-on-concrete-balcony-5905276/",
+    "description": "Dramatic horizontal black coat portrait on brutalist concrete car park; verified visually. Free to use Pexels photo."
+  },
+  {
+    "key": "hero-alt",
+    "url": "https://images.pexels.com/photos/6311687/pexels-photo-6311687.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    "source": "https://www.pexels.com/photo/black-men-in-trendy-outfit-standing-against-cement-wall-6311687/",
+    "description": "Horizontal editorial of two men in blank black/ivory hoodies against concrete wall; verified visually. Free to use Pexels photo."
+  },
+  {
+    "key": "hoodie",
+    "url": "https://www.workwearink.com.au/cdn/shop/files/5161_RELAX_HOOD_BLACK.jpg?v=1740016812&width=1920",
+    "source": "https://www.workwearink.com.au/products/mens-relax-hoodie"
+  },
+  {
+    "key": "white-tee",
+    "url": "https://printblanc.co.uk/cdn/shop/files/5030_BOX_TEE_WHITE.jpg?v=1754690061&width=3840",
+    "source": "https://printblanc.co.uk/products/as-colour-box-tee-5030"
+  },
+  {
+    "key": "jacket",
+    "url": "https://quotes.allaboutpromo.co.nz/product-images/S284/5522_CHORE_JACKET_BLACK__63996.1619754916.jpg",
+    "source": "https://thinkpromo.co.nz/Uniforms-and-Promotional-Products/22178/AS-Colour-Mens-Chore-Cotton-Jacket.html"
+  },
+  {
+    "key": "cargo",
+    "url": "https://magictransfer.co.nz/wp-content/uploads/2024/01/5911_CARGO_PANTS_ARMY.jpg",
+    "source": "https://magictransfer.co.nz/shop/clothing-blanks/sort-by-brand/as-colour/pants-as-colour/mens-utility-cargo-pants-5911/"
+  },
+  {
+    "key": "sweatshirt",
+    "url": "https://printnatural.com/cdn/shop/files/5145_HEAVY_CREW_GREY_MARLE__48752_2048x.jpg?v=1712931413",
+    "source": "https://printnatural.com/products/as-colour-mens-heavy-crewneck-sweatshirt-5145"
+  },
+  {
+    "key": "cap",
+    "url": "https://fabricprinter.com.au/cdn/shop/files/1132_ACCESS_FIVE_PANEL_CAP_BLACK_1896x.jpg?v=1750400403",
+    "source": "https://fabricprinter.com.au/products/access-five-panel-cap-1132"
+  },
+  {
+    "key": "bag",
+    "url": "https://printnatural.com/cdn/shop/files/1002_SHOULDER_TOTE_BLACK__27920_2048x.jpg?v=1701279540",
+    "source": "https://printnatural.com/products/as-colour-shoulder-tote-1002"
+  },
+  {
+    "key": "black-tee",
+    "url": "https://shop.houseofuniforms.com.au/cdn/shop/files/5030_BOX_TEE_BLACK.jpg?v=1753934236",
+    "source": "https://shop.houseofuniforms.com.au/products/the-box-tee-mens-short-sleeve"
+  }
+]
