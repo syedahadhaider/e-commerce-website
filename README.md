@@ -1,155 +1,51 @@
 # FORM / AFTER
 
-A fictional premium streetwear storefront with an editorial black-and-white design, orange accents, responsive layouts, and eight sample products.
+FORM / AFTER is a fictional premium streetwear storefront with an editorial black-and-white aesthetic and a complete demo shopping flow.
 
-## What the website includes
+[View the live site](https://form-after.vercel.app/)
 
-- Product browsing with categories, text search, price filters, and sorting.
-- Product details, material and care information, and a size guide.
-- Size selection and an editable shopping bag, saved in this browser between visits.
-- Quantity controls, removal, and a maximum of five items per product/size combination.
-- A two-step demo checkout: delivery information, then order review and simulated payment.
-- Shipping calculations: standard US shipping is $8, free for orders of $180 or more; express shipping is $18.
-- Order confirmation, empty states, keyboard-accessible controls, and mobile navigation.
+> This is a demonstration project. It does not process payments or persist customer and order data on a server.
 
-**This is a demonstration store.** It does not process real payments, store orders in a database, send emails, or arrange shipping. Checkout contact/address information stays in page memory and is lost on refresh. Bag contents are stored locally in the browser. Taxes are a sample $0.00.
+## Features
 
-## Requirements
+- Responsive product catalogue with category, search, price, and sort controls
+- Product details, size selection, material information, and size guidance
+- Browser-persisted shopping bag with quantity controls
+- Two-step demo checkout with delivery, shipping, review, and confirmation states
+- Accessible controls, mobile navigation, empty states, and validation feedback
 
-- Node.js 22.13.0 or newer, with npm. This copy was verified with Node.js 24.15.0 and npm 11.12.1.
-- A modern browser such as Chrome, Edge, or Firefox.
-- Internet access when installing dependencies.
+## Tech stack
 
-The website does not require payment credentials, a database, or an `.env` file for the local demo. Keep the included `.openai/hosting.json` file: the build configuration imports it.
+- React 19 and TypeScript
+- Vinext and Vite
+- Tailwind CSS
+- Base UI and shadcn components
+- Nitro for Vercel deployment
 
-## Run the website locally — step by step
+## Local setup
 
-### 1. Clone the repository
+Requires Node.js 22.13 or newer and npm.
 
-Open Windows Terminal or PowerShell and run:
-
-```powershell
+```bash
 git clone https://github.com/syedahadhaider/e-commerce-website.git
-Set-Location -LiteralPath '.\e-commerce-website'
-```
-
-Run all following commands from this folder, which contains `package.json`.
-
-### 2. Check Node.js and npm
-
-```powershell
-node --version
-npm --version
-```
-
-If either command is missing, install a supported Node.js version from https://nodejs.org/ and reopen the terminal.
-
-### 3. Install dependencies
-
-```powershell
+cd e-commerce-website
 npm ci
-```
-
-This installs the dependency versions recorded in `package-lock.json`.
-
-### 4. Start the development server
-
-```powershell
 npm run dev
 ```
 
-Leave the terminal open while using the website. Wait for the `Local` address to appear.
+Open the local URL printed by the development server (normally `http://localhost:3000`). No environment variables, database, or payment credentials are required.
 
-### 5. Open the website
+## Build commands
 
-Open the address printed in the terminal, normally:
-
-http://localhost:3000/
-
-If port 3000 is occupied, use the actual address printed by the server. Saving source changes normally refreshes the development page automatically.
-
-### 6. Stop the website
-
-Press **Ctrl+C** in the terminal running the server. Confirm termination if Windows asks.
-
-## Build and preview the production output locally
-
-Stop the development server first, then run:
-
-```powershell
-npm run build
+```bash
+npm run build       # Create the production build
+npm start           # Preview the Cloudflare Worker build locally
+npm run lint        # Run Oxlint
+npx tsc --noEmit    # Run TypeScript checks
 ```
 
-After a successful build, run:
+Vercel deployments use the Nitro adapter configured in `vite.config.ts` and `vercel.json`.
 
-```powershell
-npm start
-```
+## Contributing
 
-Open the address printed by Wrangler, normally:
-
-http://127.0.0.1:8787/
-
-`npm start` uses the generated `dist/server/wrangler.json` to preview the built Cloudflare Worker locally. It does **not** publish the website. Re-run `npm run build` after source changes before previewing with `npm start`. Press **Ctrl+C** to stop this preview.
-
-Do not double-click a source file or try to open an `index.html` directly. This project needs its local server.
-
-## Try the demo checkout
-
-1. Browse the collection, or search for `hoodie`.
-2. Open a product, select a size, and choose **Add to bag**.
-3. Adjust the quantity or add another product, then choose **Checkout**.
-4. Enter sample details, for example:
-   - Email: `alex@example.com`
-   - Name: `Alex Morgan`
-   - Street: `123 Sample Street`
-   - City: `Brooklyn`
-   - State: `New York`
-   - ZIP: `11201`
-5. Select standard or express shipping and choose **Continue to review**.
-6. Review the total and select **Place demo order**.
-7. The confirmation screen shows a sample order reference and clears the bag. No card details or real payment are required.
-
-## Main files and folders
-
-| Path | Purpose |
-| --- | --- |
-| `app/page.tsx` | Storefront, product views, shopping bag, checkout, and interactions |
-| `app/products.ts` | Eight sample products, prices, sizes, descriptions, and image paths |
-| `app/globals.css` | Brand styling and responsive layouts |
-| `app/layout.tsx` | Shared page structure, title, and description |
-| `public/images/` | Locally stored campaign and product photographs |
-| `public/image-sources.json` | Image source records |
-| `public/favicon.svg` | Brand browser icon |
-| `components/ui/` | Reusable interface components |
-| `vite.config.ts` | Vinext, Sites, Tailwind, and Cloudflare development/build setup |
-| `.openai/hosting.json` | Existing Sites project configuration |
-| `package.json` / `package-lock.json` | Commands and dependency versions |
-| `dist/` | Generated build output; regenerate with `npm run build` |
-
-To edit the collection, start with `app/products.ts`. To change the design, edit `app/globals.css`. Product detail views use URLs such as `?product=heavyweight-hoodie`; checkout uses `?view=checkout`.
-
-## Technology
-
-React 19, TypeScript, Vinext with Vite, Tailwind CSS, shadcn/Base UI components, Lucide icons, and Cloudflare Worker-compatible output. Although it uses Next.js-style conventions, its development command is `npm run dev` as defined in this project's package file.
-
-## Troubleshooting
-
-- **`npm` is not recognized:** Install Node.js and reopen the terminal.
-- **PowerShell blocks `npm.ps1`:** Use `npm.cmd` instead of `npm`, for example `npm.cmd run dev`. Use `npx.cmd` instead of `npx` if necessary. You do not need to change the computer's execution policy.
-- **Missing packages:** Stop the server and run `npm ci` in the project folder.
-- **Port already in use:** Use the available address printed by the development server, or stop the other process if you recognize it.
-- **Missing `dist/server/wrangler.json`:** Run `npm run build` successfully before `npm start`.
-- **Stale page after pulling changes or rebuilding:** Stop the server, start it again from this folder, and refresh the browser.
-- **Bag contents disappear:** Browser private mode, disabled storage, clearing site data, or switching between `localhost`, `127.0.0.1`, and the hosted domain can create separate or temporary bags.
-
-## Verification
-
-Browser testing covered desktop (1440×1000), tablet (768×1024), mobile (390×844), and narrow mobile (320×740), including search, filtering, sorting, size selection, bag persistence, quantity limits, form validation, shipping totals, and completed desktop/mobile sample orders.
-
-The documented commands were also verified directly:
-
-- `npm run dev` started successfully; `http://localhost:3000/` returned HTTP 200 with the storefront content.
-- `npm run build` completed successfully.
-- `npm start` started successfully; `http://127.0.0.1:8787/` returned HTTP 200 with the storefront content.
-- `npx tsc --noEmit` passed.
+Contributions are welcome. Create a focused branch, keep changes scoped, and open a pull request describing the behavior and verification performed.
