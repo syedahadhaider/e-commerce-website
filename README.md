@@ -142,7 +142,6 @@ React 19, TypeScript, Vinext with Vite, Tailwind CSS, shadcn/Base UI components,
 - **Missing `dist/server/wrangler.json`:** Run `npm run build` successfully before `npm start`.
 - **Stale page after pulling changes or rebuilding:** Stop the server, start it again from this folder, and refresh the browser.
 - **Bag contents disappear:** Browser private mode, disabled storage, clearing site data, or switching between `localhost`, `127.0.0.1`, and the hosted domain can create separate or temporary bags.
-- **Hosted link asks for ChatGPT sign-in:** The hosted copy is private to its owner. Local development does not require the hosted site's sign-in.
 
 ## Verification
 
@@ -154,9 +153,3 @@ The documented commands were also verified directly:
 - `npm run build` completed successfully.
 - `npm start` started successfully; `http://127.0.0.1:8787/` returned HTTP 200 with the storefront content.
 - `npx tsc --noEmit` passed.
-
-## Hosted copy and commercial use
-
-The existing Sites project identity is retained in `.openai/hosting.json`.
-
-The brand, prices, specifications, shipping policy, and checkout are fictional. Product photos are illustrative sample assets; source records are included, but catalog photo reuse rights were not verified. Before a real commercial launch, replace or license those images and implement server-side orders, inventory validation, payments, tax calculations, fulfillment, and appropriate customer policies.
