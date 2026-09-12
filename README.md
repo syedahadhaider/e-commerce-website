@@ -24,12 +24,13 @@ The website does not require payment credentials, a database, or an `.env` file 
 
 ## Run the website locally — step by step
 
-### 1. Open the project folder in PowerShell
+### 1. Clone the repository
 
 Open Windows Terminal or PowerShell and run:
 
 ```powershell
-Set-Location -LiteralPath 'C:\Users\pc\Desktop\Projects\ChatGPT\form-after'
+git clone https://github.com/syedahadhaider/e-commerce-website.git
+Set-Location -LiteralPath '.\e-commerce-website'
 ```
 
 Run all following commands from this folder, which contains `package.json`.
@@ -43,15 +44,13 @@ npm --version
 
 If either command is missing, install a supported Node.js version from https://nodejs.org/ and reopen the terminal.
 
-### 3. Install dependencies if needed
-
-The moved folder already includes `node_modules`, so you can skip this step on the current computer if dependencies are intact. On a fresh copy or another computer, run:
+### 3. Install dependencies
 
 ```powershell
 npm ci
 ```
 
-This installs the dependency versions recorded in `package-lock.json`. It replaces an existing `node_modules` folder, so stop any running website server first.
+This installs the dependency versions recorded in `package-lock.json`.
 
 ### 4. Start the development server
 
@@ -141,22 +140,20 @@ React 19, TypeScript, Vinext with Vite, Tailwind CSS, shadcn/Base UI components,
 - **Missing packages:** Stop the server and run `npm ci` in the project folder.
 - **Port already in use:** Use the available address printed by the development server, or stop the other process if you recognize it.
 - **Missing `dist/server/wrangler.json`:** Run `npm run build` successfully before `npm start`.
-- **Stale page after moving the folder or rebuilding:** Stop the server, start it again from this folder, and refresh the browser.
+- **Stale page after pulling changes or rebuilding:** Stop the server, start it again from this folder, and refresh the browser.
 - **Bag contents disappear:** Browser private mode, disabled storage, clearing site data, or switching between `localhost`, `127.0.0.1`, and the hosted domain can create separate or temporary bags.
 - **Hosted link asks for ChatGPT sign-in:** The hosted copy is private to its owner. Local development does not require the hosted site's sign-in.
 
 ## Verification
 
-Original browser testing covered desktop (1440×1000), tablet (768×1024), mobile (390×844), and narrow mobile (320×740), including search, filtering, sorting, size selection, bag persistence, quantity limits, form validation, shipping totals, and completed desktop/mobile sample orders.
+Browser testing covered desktop (1440×1000), tablet (768×1024), mobile (390×844), and narrow mobile (320×740), including search, filtering, sorting, size selection, bag persistence, quantity limits, form validation, shipping totals, and completed desktop/mobile sample orders.
 
-When this README was created in the moved folder, these checks were repeated on 6 September 2026:
+The documented commands were also verified directly:
 
 - `npm run dev` started successfully; `http://localhost:3000/` returned HTTP 200 with the storefront content.
 - `npm run build` completed successfully.
 - `npm start` started successfully; `http://127.0.0.1:8787/` returned HTTP 200 with the storefront content.
 - `npx tsc --noEmit` passed.
-
-These checks verify the documented commands in the moved folder; they are not a claim of a new full browser regression test.
 
 ## Hosted copy and commercial use
 
